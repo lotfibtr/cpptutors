@@ -4,7 +4,6 @@
 #include <iostream>
 #include <iomanip>
 #include <cassert>
-#include <stdexcept> // To use runtime_error
 #include <assert.h>
 #include "Vector3.h"
 using namespace std;

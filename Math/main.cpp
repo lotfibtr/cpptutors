@@ -3,6 +3,7 @@
 using namespace std;
 
 #include "Vector3.h"
+#include <cassert>
 
 constexpr float Epsilon = 0.00001f;
 bool Equals(float value)
@@ -45,7 +46,6 @@ int main()
     cout << "Sin of the angle after correction : " << sinVal << endl;
     float area = cv1.Length() * cv2.Length() * sinf(angles[0]);
     cout << "Area of the paralellogram : " << area << endl;
-
     
     cout << "\n********************************************\nCross product\n\n";
 
@@ -65,6 +65,29 @@ int main()
     cout << "Length vd2 :\t" << vd2.Length() << endl;
     cout << "Angle between both vectors :\t" << angle << endl;
     */
+
+    Vector3 v = Vector3(1.0f, 2.0f, 3.0f);
+    Vector3 v2 = v / 0.0f;
+
+    cout << "\n\nVector v :\t" << v2.GetX() << "\t" << v2.GetY() << "\t" << v2.GetZ() << endl;
+
+    cout << "\n\n";
+
+
+
+    void may_throw();
+    void no_throw() noexcept;
+    auto lmay_throw = [] {};
+    auto lno_throw = []() noexcept {};
+
+    Vector3 v3 = Vector3(1.0f, 2.0f, 3.0f);
+
+
+
+    std::cout << std::boolalpha
+        << "Is may_throw() noexcept? " << noexcept(Vector3::Length(v3)) << '\n';
+
+    
 
     cout << endl << endl;
 	return 0;
